@@ -21,14 +21,14 @@ module.exports = class Product {
 
     save(){
         
-        getProductsFromFile(products =>){
+        getProductsFromFile(products =>{
             //adding the new product to products array
             products.push(this);
             // replace the content of the file with the data in products array that already contains the old + new added data
             fs.writeFile(p,JSON.stringify(products),(err)=>{
                 console.log(err);
             });
-        };
+        });
     };
     //JSON.stringify(arg) : turn the data to string
     static fetchAll(cb){ // cb a function 
